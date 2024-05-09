@@ -1,0 +1,126 @@
+services:
+  testing:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.testing
+      tags:
+        - testing
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+
+  load_balanced_production_server_one:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.production
+      tags:
+        - load_balanced_production_server_one
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3000
+    ports:
+      - 3000:3000
+
+  load_balanced_production_server_two:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.production
+      tags:
+        - load_balanced_production_server_two
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3001
+    ports:
+      - 3001:3001
+      
+  load_balanced_production_server_three:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.production
+      tags:
+        - load_balanced_production_server_three
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3002
+    ports:
+      - 3002:3002
+
+  production_load_balancing_server:
+        build:
+          context: .
+          dockerfile: ./load_balancing_proxy_service/dockerfile.production
+          tags:
+            - production_load_balancing_server
+        ports:
+          - 80:80
+        depends_on:
+          - load_balanced_production_server_one
+          - load_balanced_production_server_two
+          - load_balanced_production_server_three
+
+  user_interface_development:
+      build:
+        context: .
+        dockerfile: ./user_interface_service/dockerfile.development
+        tags:
+          - user_interface_development
+      volumes:
+        - ./user_interface_service/:/src/app/user_interface_service/
+      environment:
+        - PORT=3004
+      ports:
+        - 3004:3004
+
+  load_balanced_development_server_one:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.development
+      tags:
+        - load_balanced_development_server_one
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3005
+    ports:
+      - 3005:3005
+
+  load_balanced_development_server_two:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.development
+      tags:
+        - load_balanced_development_server_two
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3006
+    ports:
+      - 3006:3006
+      
+  load_balanced_development_server_three:
+    build:
+      context: .
+      dockerfile: ./user_interface_service/dockerfile.development
+      tags:
+        - load_balanced_development_server_three
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+    environment:
+      - PORT=3007
+    ports:
+      - 3007:3007
+
+  development_load_balancing_server:
+    build:
+      context: .
+      dockerfile: ./load_balancing_proxy_service/dockerfile.development
+      tags:
+        - development_load_balancing_server
+    ports:
+      - 3008:3008
+    depends_on:
+      - load_balanced_development_server_one
+      - load_balanced_development_server_two
+      - load_balanced_development_server_three

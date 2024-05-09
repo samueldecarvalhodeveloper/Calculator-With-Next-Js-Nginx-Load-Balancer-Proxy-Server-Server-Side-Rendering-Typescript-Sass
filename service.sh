@@ -1,0 +1,1 @@
+docker compose up production_load_balancing_server

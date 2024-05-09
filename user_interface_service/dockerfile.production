@@ -1,0 +1,31 @@
+# syntax=docker/dockerfile:1
+
+FROM node
+
+WORKDIR /src/app/
+
+COPY ./user_interface_service/package.json /src/app/
+COPY ./user_interface_service/tsconfig.json /src/app/
+COPY ./user_interface_service/types.d.ts /src/app/
+COPY ./user_interface_service/next-env.d.ts /src/app/
+COPY ./user_interface_service/next.config.mjs /src/app/
+COPY ./user_interface_service/src/app/ /src/app/src/app/
+COPY ./user_interface_service/src/assets/ /src/app/src/assets/
+COPY ./user_interface_service/src/calculator_characters/ /src/app/src/calculator_characters/
+COPY ./user_interface_service/src/components/ /src/app/src/components/
+COPY ./user_interface_service/src/constants/ /src/app/src/constants/
+COPY ./user_interface_service/src/domains/ /src/app/src/domains/
+COPY ./user_interface_service/src/infrastructure/ /src/app/src/infrastructure/
+COPY ./user_interface_service/src/screens/ /src/app/src/screens/
+COPY ./user_interface_service/src/slices/ /src/app/src/slices/
+COPY ./user_interface_service/src/store/ /src/app/src/store/
+COPY ./user_interface_service/src/hooks/ /src/app/src/hooks/
+COPY ./user_interface_service/src/calculation_result_update_adapter/ /src/app/src/calculation_result_update_adapter/
+COPY ./user_interface_service/src/last_session_calculation_result_store/ /src/app/src/last_session_calculation_result_store/
+
+RUN npm install
+RUN npm run build
+
+CMD npm run start
+
+EXPOSE 3000

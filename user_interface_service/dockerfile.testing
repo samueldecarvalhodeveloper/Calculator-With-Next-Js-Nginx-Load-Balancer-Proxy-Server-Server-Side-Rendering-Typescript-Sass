@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1
+
+FROM node
+
+WORKDIR /src/app/
+
+COPY ./user_interface_service/package.json /src/app/
+COPY ./user_interface_service/tsconfig.json /src/app/
+COPY ./user_interface_service/types.d.ts /src/app/
+COPY ./user_interface_service/next-env.d.ts /src/app/
+COPY ./user_interface_service/next.config.mjs /src/app/
+COPY ./user_interface_service/jest.config.js /src/app/
+COPY ./user_interface_service/jest.setup.js /src/app/
+COPY ./user_interface_service/src/ /src/app/src/
+
+RUN npm install
+
+CMD npm run test
