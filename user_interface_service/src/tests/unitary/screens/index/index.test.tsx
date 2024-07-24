@@ -6,7 +6,7 @@ import CalculatorCharacters from "../../../../domains/calculator/calculator_char
 import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import CalculatorTranslatorFactory from "../../../../infrastructure/anticorruption_layer.ts/calculator_translator_factory";
 import { CALCULATOR_LABEL_TEXT } from "../../../constants/ui_constants";
-import render from "../../../adapters/render";
+import render from "../../../concerns/react_render_adapter";
 import Index from "../../../../screens/index/index";
 import CalculatorTranslator from "../../../../infrastructure/anticorruption_layer.ts/calculator_translator";
 

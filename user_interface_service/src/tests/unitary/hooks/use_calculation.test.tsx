@@ -3,7 +3,7 @@ import { fireEvent } from "@testing-library/react";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../../constants/pages/index_page_constants";
 import Index from "../../../screens/index";
 import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator_characters";
-import render from "../../adapters/render";
+import render from "../../concerns/react_render_adapter";
 
 describe('Test Hook: "useCalculationResult"; Behavior', () => {
   test('Test If Attribute: "calculationResult"; Return The Calculator Translator Initial Value Correctly', () => {

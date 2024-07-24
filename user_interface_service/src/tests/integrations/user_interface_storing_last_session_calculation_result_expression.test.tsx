@@ -5,7 +5,7 @@ import LastSessionCalculationResultStore from "../../last_session_calculation_re
 import UiCalculatorCharacters from "../../calculator_characters/ui_calculator_characters";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../constants/pages/index_page_constants";
 import Index from "../../screens/index/index";
-import render from "../adapters/render";
+import render from "../concerns/react_render_adapter";
 
 describe('Test Integration Of: "Ui Executing Calculation"; Behavior', () => {
   test("Test If I Can Store A Calculation From Ui Correctly", () => {

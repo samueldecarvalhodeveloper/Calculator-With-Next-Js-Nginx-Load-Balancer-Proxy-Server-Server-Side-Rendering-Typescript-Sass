@@ -2,7 +2,7 @@ import { describe, test, expect } from "@jest/globals";
 import { fireEvent } from "@testing-library/react";
 import KeyValueStore from "@/domains/key_value_store/key_value_store";
 import { LAST_SESSION_CALCULATION_KEY } from "@/constants/ui_constants";
-import render from "../../adapters/render";
+import render from "../../concerns/react_render_adapter";
 import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator_characters";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../../constants/pages/index_page_constants";
 import Index from "../../../screens/index/index";

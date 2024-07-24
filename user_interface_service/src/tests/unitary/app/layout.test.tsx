@@ -1,5 +1,5 @@
 import { describe, test, expect } from "@jest/globals";
-import render from "../../adapters/render";
+import render from "../../concerns/react_render_adapter";
 import Layout from "../../../app/layout";
 import Page from "../../../app/page";
 import { CALCULATOR_LABEL_TEXT } from "../../constants/ui_constants";

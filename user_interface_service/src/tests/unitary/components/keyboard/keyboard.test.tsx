@@ -1,6 +1,6 @@
 import { describe, test, expect } from "@jest/globals";
 import CalculatorCharacters from "../../../../domains/calculator/calculator_characters";
-import render from "../../../adapters/render";
+import render from "../../../concerns/react_render_adapter";
 import Keyboard from "../../../../components/keyboard/keyboard";
 
 describe('Test Component: "Keyboard"; Behavior', () => {

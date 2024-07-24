@@ -5,7 +5,7 @@ import { EMPTY_STRING } from "../../constants/string_utilities_constants";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../constants/pages/index_page_constants";
 import UiCalculatorCharacters from "../../calculator_characters/ui_calculator_characters";
 import Index from "../../screens/index/index";
-import render from "../adapters/render";
+import render from "../concerns/react_render_adapter";
 
 describe("Test System Behavior", () => {
   test("Test If System Handles A Calculator Calculation In User Interface Correctly", () => {
