@@ -7,7 +7,6 @@ WORKDIR /src/app/
 COPY ./user_interface_service/package.json /src/app/
 COPY ./user_interface_service/tsconfig.json /src/app/
 COPY ./user_interface_service/types.d.ts /src/app/
-COPY ./user_interface_service/next-env.d.ts /src/app/
 COPY ./user_interface_service/next.config.mjs /src/app/
 COPY ./user_interface_service/src/ /src/app/src/
 

@@ -19,7 +19,7 @@ services:
     environment:
       - PORT=3000
     ports:
-      - 3000:3000
+      - 3001:3000
 
   load_balanced_production_server_two:
     build:
@@ -32,7 +32,7 @@ services:
     environment:
       - PORT=3001
     ports:
-      - 3001:3001
+      - 3002:3001
       
   load_balanced_production_server_three:
     build:
@@ -45,7 +45,7 @@ services:
     environment:
       - PORT=3002
     ports:
-      - 3002:3002
+      - 3003:3002
 
   production_load_balancing_server:
         build:
@@ -54,7 +54,7 @@ services:
           tags:
             - production_load_balancing_server
         ports:
-          - 80:80
+          - 3000:80
         depends_on:
           - load_balanced_production_server_one
           - load_balanced_production_server_two
@@ -71,7 +71,7 @@ services:
       environment:
         - PORT=3004
       ports:
-        - 3004:3004
+        - 3005:3004
 
   load_balanced_development_server_one:
     build:
@@ -84,7 +84,7 @@ services:
     environment:
       - PORT=3005
     ports:
-      - 3005:3005
+      - 3006:3005
 
   load_balanced_development_server_two:
     build:
@@ -97,7 +97,7 @@ services:
     environment:
       - PORT=3006
     ports:
-      - 3006:3006
+      - 3007:3006
       
   load_balanced_development_server_three:
     build:
@@ -110,7 +110,7 @@ services:
     environment:
       - PORT=3007
     ports:
-      - 3007:3007
+      - 3008:3007
 
   development_load_balancing_server:
     build:
@@ -119,7 +119,7 @@ services:
       tags:
         - development_load_balancing_server
     ports:
-      - 3008:3008
+      - 3009:3009
     depends_on:
       - load_balanced_development_server_one
       - load_balanced_development_server_two
