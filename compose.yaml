@@ -1,8 +1,8 @@
 services:
   testing:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.testing
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.testing
       tags:
         - testing
     volumes:
@@ -10,8 +10,8 @@ services:
 
   load_balanced_production_server_one:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.production
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
       tags:
         - load_balanced_production_server_one
     volumes:
@@ -23,8 +23,8 @@ services:
 
   load_balanced_production_server_two:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.production
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
       tags:
         - load_balanced_production_server_two
     volumes:
@@ -36,8 +36,8 @@ services:
       
   load_balanced_production_server_three:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.production
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
       tags:
         - load_balanced_production_server_three
     volumes:
@@ -49,8 +49,8 @@ services:
 
   production_load_balancing_server:
         build:
-          context: .
-          dockerfile: ./load_balancing_proxy_service/dockerfile.production
+          context: ./load_balancing_proxy_service/
+          dockerfile: ./dockerfile.production
           tags:
             - production_load_balancing_server
         ports:
@@ -62,8 +62,8 @@ services:
 
   user_interface_development:
       build:
-        context: .
-        dockerfile: ./user_interface_service/dockerfile.development
+        context: ./user_interface_service/
+        dockerfile: ./dockerfile.development
         tags:
           - user_interface_development
       volumes:
@@ -75,8 +75,8 @@ services:
 
   load_balanced_development_server_one:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.development
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.development
       tags:
         - load_balanced_development_server_one
     volumes:
@@ -88,8 +88,8 @@ services:
 
   load_balanced_development_server_two:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.development
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.development
       tags:
         - load_balanced_development_server_two
     volumes:
@@ -101,8 +101,8 @@ services:
       
   load_balanced_development_server_three:
     build:
-      context: .
-      dockerfile: ./user_interface_service/dockerfile.development
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.development
       tags:
         - load_balanced_development_server_three
     volumes:
@@ -114,8 +114,8 @@ services:
 
   development_load_balancing_server:
     build:
-      context: .
-      dockerfile: ./load_balancing_proxy_service/dockerfile.development
+      context: ./load_balancing_proxy_service/
+      dockerfile: ./dockerfile.development
       tags:
         - development_load_balancing_server
     ports:
