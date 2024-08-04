@@ -1,1 +1,1 @@
-docker compose up production_load_balancing_server
+docker compose up load_balancing_proxy_service

@@ -21,9 +21,15 @@ Calculator With Next Js, Nginx Load Balancer Proxy Server, Server Side Rendering
 
 <br />
 
+<h3 id="topology">🗺️  Topology:</h3>
+
+![](./system_topology.png)
+
+<br />
+
 <h3 id="install">🔍  Install:</h3>
 
-<p>To use all projects environment, run the following commands:<p>
+<p>To use the production environment, run the following commands:<p>
 
 **To run the service:**
 
