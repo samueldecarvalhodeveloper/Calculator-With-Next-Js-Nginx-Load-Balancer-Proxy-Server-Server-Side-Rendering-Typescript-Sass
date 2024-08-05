@@ -29,11 +29,11 @@ Calculator With Next Js, Nginx Load Balancer Proxy Server, Server Side Rendering
 
 <h3 id="install">🔍  Install:</h3>
 
-<p>To use the production environment, run the following commands:<p>
+<p>To start the service, run the following commands:<p>
 
 **To run the service:**
 
-`./service.sh`
+`./service_starting.sh`
 
 <br />
 
