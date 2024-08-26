@@ -10,13 +10,13 @@ import {
 import CalculatorCharacters from "../domains/calculator/calculator_characters";
 
 function useCalculation() {
-  const calculationResult: string = useSelector(
+  const calculationExpression: string = useSelector(
     (state: RootState) => state.calculator.value,
   );
   const dispatcher: Dispatch<UnknownAction> = useDispatch();
 
   return {
-    calculationResult,
+    calculationExpression,
 
     addCharacter(character: CalculatorCharacters) {
       dispatcher(addCharacter(character));

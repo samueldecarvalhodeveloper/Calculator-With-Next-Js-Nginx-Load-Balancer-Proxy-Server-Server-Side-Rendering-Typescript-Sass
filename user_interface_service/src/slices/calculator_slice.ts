@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import LastSessionCalculationResultStore from "@/last_session_calculation_result_store/last_session_calculation_result_store";
-import CalculationResultUpdateAdapter from "../calculation_result_update_adapter/calculation_result_update_adapter";
+import LastSessionCalculationResultStore from "../last_session_calculation_expression_store/last_session_calculation_expression_store";
+import CalculationResultUpdateAdapter from "../calculation_expression_update_adapter/calculation_expression_update_adapter";
 import { EMPTY_STRING } from "../constants/string_utilities_constants";
 import { CALCULATOR_SLICE_NAME } from "../constants/ui_constants";
-import CalculatorTranslator from "../infrastructure/anticorruption_layer.ts/calculator_translator";
-import CalculatorTranslatorFactory from "../infrastructure/anticorruption_layer.ts/calculator_translator_factory";
 import CalculatorCharacters from "../domains/calculator/calculator_characters";
+import CalculatorFactory from "../domains/calculator/calculator_factory";
+import Calculator from "../domains/calculator/calculator";
 
 let lastSessionCalculationExpression: string;
 
@@ -16,21 +16,21 @@ try {
   lastSessionCalculationExpression = EMPTY_STRING;
 }
 
-const calculatorTranslator: CalculatorTranslator =
-  CalculatorTranslatorFactory.getInstance(lastSessionCalculationExpression);
+const calculator: Calculator = CalculatorFactory.getInstance(
+  lastSessionCalculationExpression,
+);
 
-const calculatorTranslatorInitialValue: string =
-  calculatorTranslator.getCalculationResult();
+const calculatorInitialValue: string = calculator.getExpression();
 
 const calculatorSlice = createSlice({
   name: CALCULATOR_SLICE_NAME,
-  initialState: { value: calculatorTranslatorInitialValue },
+  initialState: { value: calculatorInitialValue },
   reducers: {
     evaluate(state) {
-      calculatorTranslator.evaluate();
+      calculator.evaluate();
 
-      CalculationResultUpdateAdapter.updateCalculationResultOnKeyValueDatabaseAndUi(
-        calculatorTranslator,
+      CalculationResultUpdateAdapter.updateCalculationExpressionOnKeyValueDatabaseAndUi(
+        calculator,
         state,
       );
     },
@@ -38,28 +38,28 @@ const calculatorSlice = createSlice({
     addCharacter(state, payload: PayloadAction<CalculatorCharacters>) {
       const choseCharacter: CalculatorCharacters = payload.payload;
 
-      calculatorTranslator.addCharacter(choseCharacter);
+      calculator.addCharacter(choseCharacter);
 
-      CalculationResultUpdateAdapter.updateCalculationResultOnKeyValueDatabaseAndUi(
-        calculatorTranslator,
+      CalculationResultUpdateAdapter.updateCalculationExpressionOnKeyValueDatabaseAndUi(
+        calculator,
         state,
       );
     },
 
     clean(state) {
-      calculatorTranslator.clean();
+      calculator.clean();
 
-      CalculationResultUpdateAdapter.updateCalculationResultOnKeyValueDatabaseAndUi(
-        calculatorTranslator,
+      CalculationResultUpdateAdapter.updateCalculationExpressionOnKeyValueDatabaseAndUi(
+        calculator,
         state,
       );
     },
 
     backspace(state) {
-      calculatorTranslator.backspace();
+      calculator.backspace();
 
-      CalculationResultUpdateAdapter.updateCalculationResultOnKeyValueDatabaseAndUi(
-        calculatorTranslator,
+      CalculationResultUpdateAdapter.updateCalculationExpressionOnKeyValueDatabaseAndUi(
+        calculator,
         state,
       );
     },

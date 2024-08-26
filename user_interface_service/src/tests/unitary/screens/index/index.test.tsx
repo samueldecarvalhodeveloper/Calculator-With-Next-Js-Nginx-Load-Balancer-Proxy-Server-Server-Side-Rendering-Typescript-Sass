@@ -1,18 +1,18 @@
 import { describe, beforeEach, test, expect } from "@jest/globals";
 import { fireEvent } from "@testing-library/react";
+import CalculatorFactory from "../../../../domains/calculator/calculator_factory";
+import Calculator from "../../../../domains/calculator/calculator";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../../../constants/pages/index_page_constants";
 import UiCalculatorCharacters from "../../../../calculator_characters/ui_calculator_characters";
 import CalculatorCharacters from "../../../../domains/calculator/calculator_characters";
 import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
-import CalculatorTranslatorFactory from "../../../../infrastructure/anticorruption_layer.ts/calculator_translator_factory";
 import { CALCULATOR_LABEL_TEXT } from "../../../constants/ui_constants";
 import render from "../../../concerns/react_render_adapter";
 import Index from "../../../../screens/index/index";
-import CalculatorTranslator from "../../../../infrastructure/anticorruption_layer.ts/calculator_translator";
 
 describe('Test Component: "Index"; Behavior', () => {
-  const calculatorTranslator: CalculatorTranslator =
-    CalculatorTranslatorFactory.getInstance(EMPTY_STRING);
+  const calculatorTranslator: Calculator =
+    CalculatorFactory.getInstance(EMPTY_STRING);
 
   beforeEach(() => {
     calculatorTranslator.clean();

@@ -5,8 +5,8 @@ import Index from "../../../screens/index";
 import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator_characters";
 import render from "../../concerns/react_render_adapter";
 
-describe('Test Hook: "useCalculationResult"; Behavior', () => {
-  test('Test If Attribute: "calculationResult"; Return The Calculator Translator Initial Value Correctly', () => {
+describe('Test Hook: "useCalculation"; Behavior', () => {
+  test('Test If Attribute: "calculation"; Return The Calculator Initial Value Correctly', () => {
     const { getByTestId } = render(<Index />);
 
     const viewfinderElement: HTMLElement = getByTestId(
@@ -16,7 +16,7 @@ describe('Test Hook: "useCalculationResult"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test('Test If Method: "addCharacter"; Returns Adds Character To Calculator Translator Calculation Result Correctly', () => {
+  test('Test If Method: "addCharacter"; Returns Adds Character To Calculator Calculation Expression Correctly', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);
@@ -30,7 +30,7 @@ describe('Test Hook: "useCalculationResult"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toEqual(UiCalculatorCharacters.ONE);
   });
 
-  test('Test If Method: "evaluate"; Evaluates Expression On Calculator Translator Calculation Result Correctly', () => {
+  test('Test If Method: "evaluate"; Evaluates Expression On Calculator Calculation Expression Correctly', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const cleanButtonElement: HTMLElement = getByText(
@@ -59,7 +59,7 @@ describe('Test Hook: "useCalculationResult"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toEqual(UiCalculatorCharacters.TWO);
   });
 
-  test('Test If Method: "clean"; Removes All Characters From Calculator Translator Calculation Result Correctly', () => {
+  test('Test If Method: "clean"; Removes All Characters From Calculator Calculation Expression Correctly', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);
@@ -77,7 +77,7 @@ describe('Test Hook: "useCalculationResult"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test('Test If Method: "backspace"; Removes Last Character From Calculator Translator Calculation Result Correctly', () => {
+  test('Test If Method: "backspace"; Removes Last Character From Calculator Calculation Expression Correctly', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);

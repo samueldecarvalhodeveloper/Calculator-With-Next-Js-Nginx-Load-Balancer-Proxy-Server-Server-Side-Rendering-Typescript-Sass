@@ -1,6 +1,6 @@
 import { describe, test, expect } from "@jest/globals";
 import { LAST_SESSION_CALCULATION_KEY } from "../../../constants/ui_constants";
-import LastSessionCalculationResultStore from "../../../last_session_calculation_result_store/last_session_calculation_result_store";
+import LastSessionCalculationResultStore from "../../../last_session_calculation_expression_store/last_session_calculation_expression_store";
 import KeyValueStore from "../../../domains/key_value_store/key_value_store";
 import CalculatorCharacters from "../../../domains/calculator/calculator_characters";
 

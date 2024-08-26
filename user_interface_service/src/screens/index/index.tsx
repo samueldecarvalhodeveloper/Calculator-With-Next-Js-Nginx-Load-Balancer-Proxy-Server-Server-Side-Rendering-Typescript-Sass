@@ -10,12 +10,12 @@ import UiCalculatorCharacters from "../../calculator_characters/ui_calculator_ch
 import useCalculation from "../../hooks/use_calculation";
 
 function Index(): JSX.Element {
-  const { addCharacter, backspace, calculationResult, clean, evaluate } =
+  const { addCharacter, backspace, calculationExpression, clean, evaluate } =
     useCalculation();
 
   return (
     <main className={styles.main}>
-      <Calculator value={calculationResult}>
+      <Calculator value={calculationExpression}>
         <Keyboard>
           <div className={styles.keyboard_one_slot_size_row}>
             <Button
