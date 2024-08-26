@@ -8,7 +8,7 @@ import {
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../../../constants/ui_constants";
 
 describe('Test Class: "KeyValueSpecifications"; Behavior', () => {
-  test('Test If Method: "isStringifiedDataFromStoreAnEmptyString"; Return True If Stringified Stored Data Is An Empty String Correctly', () => {
+  test('Test If Method: "isStringifiedDataFromStoreAnEmptyString"; Returns True If Stringified Stored Data Is An Empty String Correctly', () => {
     KeyValueStore.setItem(LAST_SESSION_CALCULATION_KEY, LAST_CALCULATION_VALUE);
 
     const stringifiedStoredData: string = localStorage.getItem(
