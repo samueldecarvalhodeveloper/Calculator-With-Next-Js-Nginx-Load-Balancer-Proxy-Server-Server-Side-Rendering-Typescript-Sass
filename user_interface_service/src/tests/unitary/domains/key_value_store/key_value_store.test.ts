@@ -11,7 +11,7 @@ import KeyValueDatabaseActiveRecord from "../../../../domains/key_value_store/ke
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../constants/ui_constants";
 
 describe('Test Class: "KeyValueStore"; Behavior', () => {
-  test('Test If Methods: "setItem"; Stores Item In Key Value Database Correctly', () => {
+  test('Test If Method: "setItem"; Stores Item In Key Value Database Correctly', () => {
     const storeDataToBeStored: StoreDataEntity =
       StoreDataEntityFactory.getInstance(LAST_CALCULATION_VALUE);
     const stringifiedDataToBeStored: string =
@@ -25,7 +25,7 @@ describe('Test Class: "KeyValueStore"; Behavior', () => {
     expect(stringifiedDataFromDatabase).toEqual(stringifiedDataToBeStored);
   });
 
-  test('Test If Methods: "getItem"; Gets Item Data From Key Value Database Correctly', () => {
+  test('Test If Method: "getItem"; Gets Item Data From Key Value Database Correctly', () => {
     KeyValueDatabaseActiveRecord.setItem(
       LAST_SESSION_CALCULATION_KEY,
       LAST_CALCULATION_VALUE,
