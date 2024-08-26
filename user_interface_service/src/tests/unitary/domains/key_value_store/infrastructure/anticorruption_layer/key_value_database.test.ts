@@ -18,7 +18,7 @@ describe('Test Class: "KeyValueDatabase"; Behavior', () => {
     expect(dataStoredInKeyValueDatabase).toEqual(LAST_CALCULATION_VALUE);
   });
 
-  test('Test If Method: "getKeyData"; Return The Stored Value From Key value Database Correctly', () => {
+  test('Test If Method: "getKeyData"; Returns The Stored Value From Key value Database Correctly', () => {
     localStorage.setItem(LAST_SESSION_CALCULATION_KEY, LAST_CALCULATION_VALUE);
 
     const parsedJsonFromStoredData: StoreValue =
