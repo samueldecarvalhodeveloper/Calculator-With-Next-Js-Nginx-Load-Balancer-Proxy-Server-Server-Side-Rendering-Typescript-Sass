@@ -1,5 +1,5 @@
 import { describe, beforeAll, beforeEach, test, expect } from "@jest/globals";
-import CalculatorCharacters from "@/domains/calculator/calculator_characters";
+import CalculatorCharacters from "../../domains/calculator/calculator_characters";
 import CalculationExpressionActiveRecord from "../../domains/calculator/calculation_expression_active_record";
 import CalculationExpressionActiveRecordDecorator from "../../domains/calculator/calculation_expression_active_record_decorator";
 import CalculationExpressionRegister from "../../domains/calculator/calculation_expression_register";
