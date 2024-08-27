@@ -6,7 +6,7 @@ import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator
 import render from "../../concerns/react_render_adapter";
 
 describe('Test Hook: "useCalculation"; Behavior', () => {
-  test('Test If Attribute: "calculation"; Return The Calculator Initial Value Correctly', () => {
+  test('Test If Attribute: "calculation"; Returns The Calculator Initial Value Correctly', () => {
     const { getByTestId } = render(<Index />);
 
     const viewfinderElement: HTMLElement = getByTestId(
