@@ -8,7 +8,7 @@ function Calculator(props: { value: string; children: ReactNode }) {
   return (
     <div className={styles.calculator}>
       <div className={styles.viewfinder}>
-        <h2 className={styles.label}>Calculator</h2>
+        <h1 className={styles.label}>Calculator</h1>
         <div className={styles.hint}>
           <h4>Result:</h4>
         </div>
