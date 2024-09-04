@@ -27,8 +27,6 @@ services:
       dockerfile: ./dockerfile.production
       tags:
         - user_interface_service_production_one
-    volumes:
-      - ./user_interface_service/:/src/app/user_interface_service/
     environment:
       - PORT=3000
     ports:
@@ -40,8 +38,6 @@ services:
       dockerfile: ./dockerfile.production
       tags:
         - user_interface_service_production_two
-    volumes:
-      - ./user_interface_service/:/src/app/user_interface_service/
     environment:
       - PORT=3001
     ports:
@@ -53,8 +49,6 @@ services:
       dockerfile: ./dockerfile.production
       tags:
         - user_interface_service_production_three
-    volumes:
-      - ./user_interface_service/:/src/app/user_interface_service/
     environment:
       - PORT=3002
     ports:
