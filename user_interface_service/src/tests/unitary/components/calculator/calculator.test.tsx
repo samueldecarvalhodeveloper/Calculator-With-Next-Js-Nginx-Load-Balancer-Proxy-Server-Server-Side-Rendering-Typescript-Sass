@@ -1,6 +1,5 @@
 import { describe, test, expect } from "@jest/globals";
 import UiCalculatorCharacters from "../../../../calculator_characters/ui_calculator_characters";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import render from "../../../concerns/react_render_adapter";
 import Calculator from "../../../../components/calculator/calculator";
 
@@ -13,7 +12,7 @@ describe('Test Component: "Calculator"; Behavior', () => {
 
     const { getByText } = render(
       <Calculator value={calculatorExpression}>
-        <h1>{EMPTY_STRING}</h1>
+        <h1 />
       </Calculator>,
     );
 

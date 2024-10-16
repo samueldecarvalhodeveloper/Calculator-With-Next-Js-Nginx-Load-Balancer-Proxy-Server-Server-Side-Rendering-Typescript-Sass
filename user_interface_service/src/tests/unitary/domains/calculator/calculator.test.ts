@@ -1,5 +1,4 @@
 import { describe, beforeAll, beforeEach, test, expect } from "@jest/globals";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import Calculator from "../../../../domains/calculator/calculator";
 import CalculationExpressionActiveRecord from "../../../../domains/calculator/calculation_expression_active_record";
 import CalculationExpression from "../../../../domains/calculator/calculation_expression";
@@ -13,7 +12,7 @@ describe('Test Class "Calculator" Behavior Correctly', () => {
 
   beforeAll(() => {
     const calculationExpression: CalculationExpression =
-      new CalculationExpression(EMPTY_STRING);
+      new CalculationExpression("");
     const calculationExpressionRegister: CalculationExpressionRegister =
       new CalculationExpressionRegister(calculationExpression);
     calculationExpressionActiveRecord =
@@ -77,7 +76,7 @@ describe('Test Class "Calculator" Behavior Correctly', () => {
     const currentCalculationExpression =
       calculationExpressionActiveRecord.getCalculationExpression();
 
-    expect(currentCalculationExpression).toEqual(EMPTY_STRING);
+    expect(currentCalculationExpression).toEqual("");
   });
 
   test('Test If Method "evaluate" Evaluates Calculation Expression Correctly', () => {

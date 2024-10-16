@@ -1,5 +1,5 @@
 import { describe, test, expect } from "@jest/globals";
-import { LAST_SESSION_CALCULATION_KEY } from "@/constants/ui_constants";
+import { LAST_SESSION_CALCULATION_KEY } from "../../constants/ui_constants";
 import KeyValueStore from "../../domains/key_value_store/key_value_store";
 import { LAST_CALCULATION_VALUE } from "../constants/key_value_store_constants";
 

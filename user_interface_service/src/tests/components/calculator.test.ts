@@ -5,7 +5,6 @@ import CalculationExpressionActiveRecordDecorator from "../../domains/calculator
 import CalculationExpressionRegister from "../../domains/calculator/calculation_expression_register";
 import Calculator from "../../domains/calculator/calculator";
 import CalculationExpression from "../../domains/calculator/calculation_expression";
-import { EMPTY_STRING } from "../../constants/string_utilities_constants";
 
 describe('Test Component "Calculator" Behavior', () => {
   let calculator: Calculator;
@@ -13,7 +12,7 @@ describe('Test Component "Calculator" Behavior', () => {
 
   beforeAll(() => {
     const calculationExpression: CalculationExpression =
-      new CalculationExpression(EMPTY_STRING);
+      new CalculationExpression("");
     const calculationExpressionRegister: CalculationExpressionRegister =
       new CalculationExpressionRegister(calculationExpression);
     calculationExpressionActiveRecord =

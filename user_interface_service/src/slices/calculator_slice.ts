@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import LastSessionCalculationResultStore from "../last_session_calculation_expression_store/last_session_calculation_expression_store";
 import CalculationResultUpdateAdapter from "../calculation_expression_update_adapter/calculation_expression_update_adapter";
-import { EMPTY_STRING } from "../constants/string_utilities_constants";
 import { CALCULATOR_SLICE_NAME } from "../constants/ui_constants";
 import CalculatorCharacters from "../domains/calculator/calculator_characters";
 import CalculatorFactory from "../domains/calculator/calculator_factory";
@@ -13,7 +12,7 @@ try {
   lastSessionCalculationExpression =
     LastSessionCalculationResultStore.getExpression();
 } catch (error) {
-  lastSessionCalculationExpression = EMPTY_STRING;
+  lastSessionCalculationExpression = "";
 }
 
 const calculator: Calculator = CalculatorFactory.getInstance(

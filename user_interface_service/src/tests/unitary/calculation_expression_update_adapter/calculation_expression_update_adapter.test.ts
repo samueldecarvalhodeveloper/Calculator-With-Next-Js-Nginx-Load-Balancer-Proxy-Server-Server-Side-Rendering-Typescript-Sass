@@ -4,12 +4,11 @@ import Calculator from "../../../domains/calculator/calculator";
 import LastSessionCalculationExpressionStore from "../../../last_session_calculation_expression_store/last_session_calculation_expression_store";
 import CalculationExpressionUpdateAdapter from "../../../calculation_expression_update_adapter/calculation_expression_update_adapter";
 import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator_characters";
-import { EMPTY_STRING } from "../../../constants/string_utilities_constants";
 
 describe('Test Class: "CalculationExpressionUpdateAdapter"; Behavior', () => {
   test('Test If Method: "updateCalculationExpressionOnKeyValueDatabaseAndUi"; Updates The Ui And Key On Key Value Data database Calculation Expression With The Latest Calculator Calculation Expression Correctly', () => {
     const state = {
-      value: EMPTY_STRING,
+      value: "",
     };
 
     const calculatorTranslator: Calculator = CalculatorFactory.getInstance(

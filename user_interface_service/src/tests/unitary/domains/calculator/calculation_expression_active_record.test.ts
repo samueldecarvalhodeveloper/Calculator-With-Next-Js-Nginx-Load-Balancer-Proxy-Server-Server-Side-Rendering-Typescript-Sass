@@ -1,5 +1,4 @@
 import { describe, beforeAll, beforeEach, test, expect } from "@jest/globals";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import CalculationExpression from "../../../../domains/calculator/calculation_expression";
 import CalculationExpressionActiveRecord from "../../../../domains/calculator/calculation_expression_active_record";
 import CalculationExpressionRegister from "../../../../domains/calculator/calculation_expression_register";
@@ -11,7 +10,7 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
 
   beforeAll(() => {
     const calculationExpression: CalculationExpression =
-      new CalculationExpression(EMPTY_STRING);
+      new CalculationExpression("");
     calculationExpressionRegister = new CalculationExpressionRegister(
       calculationExpression,
     );
@@ -21,14 +20,14 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
   });
 
   beforeEach(() => {
-    calculationExpressionRegister.setCalculationExpression(EMPTY_STRING);
+    calculationExpressionRegister.setCalculationExpression("");
   });
 
   test('Test If Method "getCalculationExpression" Returns Current Calculation Expression Correctly', () => {
     const currentCalculationExpression =
       calculationExpressionActiveRecord.getCalculationExpression();
 
-    expect(currentCalculationExpression).toEqual(EMPTY_STRING);
+    expect(currentCalculationExpression).toEqual("");
   });
 
   test('Test If Method "removeLastCharacterFromCalculationExpression" Removes Calculation Expression Last Character Correctly', () => {
@@ -60,7 +59,7 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
     const currentCalculationExpression =
       calculationExpressionRegister.getCalculationExpression();
 
-    expect(currentCalculationExpression).toEqual(EMPTY_STRING);
+    expect(currentCalculationExpression).toEqual("");
   });
 
   test('Test if Method "evaluateCalculationExpression" Evaluates Calculation Expression Correctly', () => {

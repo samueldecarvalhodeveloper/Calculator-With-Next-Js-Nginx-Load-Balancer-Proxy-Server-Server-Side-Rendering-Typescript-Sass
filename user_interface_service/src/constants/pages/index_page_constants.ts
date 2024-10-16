@@ -1,4 +1,4 @@
-export const CLEAN_CHARACTER = "c";
+export const CLEAN_CHARACTER = "C";
 
 export const BACKSPACE_CHARACTER = "<";
 

@@ -1,18 +1,17 @@
 import { describe, test, expect } from "@jest/globals";
 import { fireEvent } from "@testing-library/react";
 import UiCalculatorCharacters from "../../../../calculator_characters/ui_calculator_characters";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import Button from "../../../../components/button/button";
 import render from "../../../concerns/react_render_adapter";
 
 describe('Test Component: "Button"; Behavior', () => {
   test("Test If Elements Are Rendered And Click Event Is Dispatched Correctly", () => {
-    let variableToBeChange: string = EMPTY_STRING;
+    let variableToBeChange: string = "";
 
     const { getByText } = render(
       <Button
         character={UiCalculatorCharacters.ONE}
-        className={EMPTY_STRING}
+        className=""
         onClick={() => {
           variableToBeChange = UiCalculatorCharacters.ONE;
         }}

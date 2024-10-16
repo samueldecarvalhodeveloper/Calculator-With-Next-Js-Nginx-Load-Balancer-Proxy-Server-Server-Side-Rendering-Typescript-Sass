@@ -1,10 +1,7 @@
 import { describe, test, expect } from "@jest/globals";
-import { EMPTY_STRING } from "@/constants/string_utilities_constants";
 import KeyValueSpecifications from "../../../../../../domains/key_value_store/infrastructure/specifications/key_value_specifications";
 import KeyValueStore from "../../../../../../domains/key_value_store/key_value_store";
-import {
-  LAST_CALCULATION_VALUE,
-} from "../../../../../constants/key_value_store_constants";
+import { LAST_CALCULATION_VALUE } from "../../../../../constants/key_value_store_constants";
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../../../constants/ui_constants";
 
 describe('Test Class: "KeyValueSpecifications"; Behavior', () => {
@@ -16,9 +13,7 @@ describe('Test Class: "KeyValueSpecifications"; Behavior', () => {
     ) as string;
 
     expect(
-      KeyValueSpecifications.isStringifiedDataFromStoreAnEmptyString(
-        EMPTY_STRING,
-      ),
+      KeyValueSpecifications.isStringifiedDataFromStoreAnEmptyString(""),
     ).toBeTruthy();
     expect(
       KeyValueSpecifications.isStringifiedDataFromStoreAnEmptyString(

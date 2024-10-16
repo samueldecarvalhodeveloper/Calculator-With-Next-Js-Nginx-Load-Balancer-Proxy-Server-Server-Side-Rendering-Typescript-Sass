@@ -1,6 +1,5 @@
 import { describe, test, expect } from "@jest/globals";
 import { fireEvent } from "@testing-library/react";
-import { EMPTY_STRING } from "../../constants/string_utilities_constants";
 import LastSessionCalculationResultStore from "../../last_session_calculation_expression_store/last_session_calculation_expression_store";
 import UiCalculatorCharacters from "../../calculator_characters/ui_calculator_characters";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../constants/pages/index_page_constants";
@@ -34,9 +33,7 @@ describe('Test Integration Of: "Ui Executing Calculation"; Behavior', () => {
     const secondLastSessionCalculationResultStoreExpression: string =
       LastSessionCalculationResultStore.getExpression();
 
-    expect(secondLastSessionCalculationResultStoreExpression).toEqual(
-      EMPTY_STRING,
-    );
-    expect(viewFinderElement.innerHTML).toEqual(EMPTY_STRING);
+    expect(secondLastSessionCalculationResultStoreExpression).toEqual("");
+    expect(viewFinderElement.innerHTML).toEqual("");
   });
 });

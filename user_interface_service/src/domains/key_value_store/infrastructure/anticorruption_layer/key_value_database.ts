@@ -1,4 +1,3 @@
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import KeyValueSpecifications from "../specifications/key_value_specifications";
 import NotExistingItemError from "../errors/not_existing_item_error";
 
@@ -11,8 +10,7 @@ class KeyValueDatabase {
   }
 
   public static getSelectedKeyData(key: string): string {
-    const dataFromKeyValueDatabase: string =
-      localStorage.getItem(key) ?? EMPTY_STRING;
+    const dataFromKeyValueDatabase: string = localStorage.getItem(key) ?? "";
 
     if (
       KeyValueSpecifications.isStringifiedDataFromStoreAnEmptyString(

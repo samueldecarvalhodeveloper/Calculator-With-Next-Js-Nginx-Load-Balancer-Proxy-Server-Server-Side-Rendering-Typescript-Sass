@@ -1,5 +1,4 @@
 import { describe, beforeAll, beforeEach, test, expect } from "@jest/globals";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import CalculationExpression from "../../../../domains/calculator/calculation_expression";
 import CalculationExpressionRegister from "../../../../domains/calculator/calculation_expression_register";
 import CalculatorCharacters from "../../../../domains/calculator/calculator_characters";
@@ -9,14 +8,14 @@ describe('Test Class "CalculationExpressionRegister" Behavior', () => {
   let calculationExpressionRegister: CalculationExpressionRegister;
 
   beforeAll(() => {
-    calculationExpression = new CalculationExpression(EMPTY_STRING);
+    calculationExpression = new CalculationExpression("");
     calculationExpressionRegister = new CalculationExpressionRegister(
       calculationExpression,
     );
   });
 
   beforeEach(() => {
-    calculationExpression.setCalculationExpression(EMPTY_STRING);
+    calculationExpression.setCalculationExpression("");
   });
 
   test('Test If Method "getCalculationExpression" Returns Current Calculation Expression Correctly', () => {

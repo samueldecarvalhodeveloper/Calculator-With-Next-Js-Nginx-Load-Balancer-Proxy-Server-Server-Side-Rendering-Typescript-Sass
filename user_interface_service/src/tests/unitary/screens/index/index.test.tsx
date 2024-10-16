@@ -5,14 +5,12 @@ import Calculator from "../../../../domains/calculator/calculator";
 import { VIEWFINDER_ELEMENT_TEST_ID } from "../../../../constants/pages/index_page_constants";
 import UiCalculatorCharacters from "../../../../calculator_characters/ui_calculator_characters";
 import CalculatorCharacters from "../../../../domains/calculator/calculator_characters";
-import { EMPTY_STRING } from "../../../../constants/string_utilities_constants";
 import { CALCULATOR_LABEL_TEXT } from "../../../constants/ui_constants";
 import render from "../../../concerns/react_render_adapter";
 import Index from "../../../../screens/index/index";
 
 describe('Test Component: "Index"; Behavior', () => {
-  const calculatorTranslator: Calculator =
-    CalculatorFactory.getInstance(EMPTY_STRING);
+  const calculatorTranslator: Calculator = CalculatorFactory.getInstance("");
 
   beforeEach(() => {
     calculatorTranslator.clean();
