@@ -4,7 +4,7 @@ import { NOT_VALID_EXPRESSION_ERROR_MESSAGE } from "../../../../../constants/dom
 import CalculatorCharacters from "../../../../../domains/calculator/calculator_characters";
 
 describe('Test Class "CalculatorSpecifications" Behavior', () => {
-  test('Test If Method "isCalculationExpressionEqualToNotValidExpressionExceptionMessage" Returns True If Expression Is Equal To Not Valid Expression Exception Message Correctly', () => {
+  test('Test If Method "isCalculationExpressionEqualToNotValidExpressionExceptionMessage" Returns True If Expression Is Equal To Not Valid Expression Exception Message', () => {
     const expressionIsNotValidExpressionExceptionMessage =
       CalculatorSpecifications.isCalculationExpressionEqualToNotValidExpressionExceptionMessage(
         NOT_VALID_EXPRESSION_ERROR_MESSAGE,
@@ -20,7 +20,7 @@ describe('Test Class "CalculatorSpecifications" Behavior', () => {
     expect(expressionIsNotNotValidExpressionExceptionMessage).toBeFalsy();
   });
 
-  test('Test If Method "isCalculationExpressionEmpty" Returns True If Calculation Expression Is Empty Correctly', () => {
+  test('Test If Method "isCalculationExpressionEmpty" Returns True If Calculation Expression Is Empty', () => {
     const calculationExpressionIsEmpty: boolean =
       CalculatorSpecifications.isCalculationExpressionEmpty("");
     const calculationExpressionIsNotEmpty: boolean =
@@ -34,7 +34,7 @@ describe('Test Class "CalculatorSpecifications" Behavior', () => {
     expect(calculationExpressionIsNotEmpty).toBeFalsy();
   });
 
-  test('Test If Method "isCalculationExpressionInfinity" Returns True If Calculation Expression Is Infinity Correctly', () => {
+  test('Test If Method "isCalculationExpressionInfinity" Returns True If Calculation Expression Is Infinity', () => {
     const calculationExpressionIsInfinity: boolean =
       CalculatorSpecifications.isCalculationExpressionInfinity(
         Infinity.toString(),

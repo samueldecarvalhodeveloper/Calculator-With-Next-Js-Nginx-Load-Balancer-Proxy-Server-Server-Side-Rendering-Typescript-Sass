@@ -5,7 +5,7 @@ import Button from "../../../../components/button/button";
 import render from "../../../concerns/react_render_adapter";
 
 describe('Test Component: "Button"; Behavior', () => {
-  test("Test If Elements Are Rendered And Click Event Is Dispatched Correctly", () => {
+  test("Test If Elements Are Rendered And Click Event Is Dispatched", () => {
     let variableToBeChange: string = "";
 
     const { getByText } = render(

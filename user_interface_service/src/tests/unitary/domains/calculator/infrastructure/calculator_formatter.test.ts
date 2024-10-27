@@ -3,7 +3,7 @@ import CalculatorCharacters from "../../../../../domains/calculator/calculator_c
 import CalculatorFormatter from "../../../../../domains/calculator/infrastructure/calculator_formatter";
 
 describe('Test Class "CalculatorFormatter" Behavior', () => {
-  test('Test If Method "getCalculationExpressionWithoutLastCharacter" Returns Calculation Expression Without Last Character Correctly', () => {
+  test('Test If Method "getCalculationExpressionWithoutLastCharacter" Returns Calculation Expression Without Last Character', () => {
     const calculationExpressionWithoutLastCharacter =
       CalculatorFormatter.getCalculationExpressionWithoutLastCharacter(
         CalculatorCharacters.ONE +

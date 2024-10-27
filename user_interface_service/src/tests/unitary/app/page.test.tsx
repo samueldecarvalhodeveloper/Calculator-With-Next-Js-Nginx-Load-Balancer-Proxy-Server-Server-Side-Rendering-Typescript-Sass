@@ -4,7 +4,7 @@ import Page from "../../../app/page";
 import render from "../../concerns/react_render_adapter";
 
 describe('Test Component: "Page"; Behavior', () => {
-  test("Test If Elements Are Rendered Correctly", () => {
+  test("Test If Elements Are Rendered", () => {
     const { getByText } = render(<Page />);
 
     const calculatorLabelElement: HTMLElement = getByText(

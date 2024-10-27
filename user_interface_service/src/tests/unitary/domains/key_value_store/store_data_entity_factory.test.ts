@@ -4,7 +4,7 @@ import { LAST_CALCULATION_VALUE } from "../../../constants/key_value_store_const
 import StoreDataEntityFactory from "../../../../domains/key_value_store/store_data_entity_factory";
 
 describe('Test Class: "StoreDataEntityFactory"; Behavior', () => {
-  test('If Test Method: "getInstance"; Instantiates A "StoreDataEntity" Correctly', () => {
+  test('If Test Method: "getInstance"; Instantiates A "StoreDataEntity"', () => {
     const storeDataEntity: StoreDataEntity = StoreDataEntityFactory.getInstance(
       LAST_CALCULATION_VALUE,
     );

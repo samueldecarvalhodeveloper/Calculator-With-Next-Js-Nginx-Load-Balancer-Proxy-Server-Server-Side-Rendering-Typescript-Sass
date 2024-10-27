@@ -23,14 +23,14 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
     calculationExpressionRegister.setCalculationExpression("");
   });
 
-  test('Test If Method "getCalculationExpression" Returns Current Calculation Expression Correctly', () => {
+  test('Test If Method "getCalculationExpression" Returns Current Calculation Expression', () => {
     const currentCalculationExpression =
       calculationExpressionActiveRecord.getCalculationExpression();
 
     expect(currentCalculationExpression).toEqual("");
   });
 
-  test('Test If Method "removeLastCharacterFromCalculationExpression" Removes Calculation Expression Last Character Correctly', () => {
+  test('Test If Method "removeLastCharacterFromCalculationExpression" Removes Calculation Expression Last Character', () => {
     calculationExpressionRegister.setCalculationExpression(
       CalculatorCharacters.ONE +
         CalculatorCharacters.ADDITION +
@@ -47,7 +47,7 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
     );
   });
 
-  test('Test if Method "turnCalculationExpressionEmpty" Removes All Characters From Calculation Expression Correctly', () => {
+  test('Test if Method "turnCalculationExpressionEmpty" Removes All Characters From Calculation Expression', () => {
     calculationExpressionRegister.setCalculationExpression(
       CalculatorCharacters.ONE +
         CalculatorCharacters.ADDITION +
@@ -62,7 +62,7 @@ describe('Test Class "CalculationExpressionActiveRecord" Behavior', () => {
     expect(currentCalculationExpression).toEqual("");
   });
 
-  test('Test if Method "evaluateCalculationExpression" Evaluates Calculation Expression Correctly', () => {
+  test('Test if Method "evaluateCalculationExpression" Evaluates Calculation Expression', () => {
     calculationExpressionRegister.setCalculationExpression(
       CalculatorCharacters.ONE +
         CalculatorCharacters.ADDITION +

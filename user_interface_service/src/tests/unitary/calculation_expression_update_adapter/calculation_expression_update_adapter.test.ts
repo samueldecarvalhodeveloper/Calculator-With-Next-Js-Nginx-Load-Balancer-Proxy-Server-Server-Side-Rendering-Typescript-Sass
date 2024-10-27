@@ -6,7 +6,7 @@ import CalculationExpressionUpdateAdapter from "../../../calculation_expression_
 import UiCalculatorCharacters from "../../../calculator_characters/ui_calculator_characters";
 
 describe('Test Class: "CalculationExpressionUpdateAdapter"; Behavior', () => {
-  test('Test If Method: "updateCalculationExpressionOnKeyValueDatabaseAndUi"; Updates The Ui And Key On Key Value Data database Calculation Expression With The Latest Calculator Calculation Expression Correctly', () => {
+  test('Test If Method: "updateCalculationExpressionOnKeyValueDatabaseAndUi"; Updates The Ui And Key On Key Value Data database Calculation Expression With The Latest Calculator Calculation Expression', () => {
     const state = {
       value: "",
     };

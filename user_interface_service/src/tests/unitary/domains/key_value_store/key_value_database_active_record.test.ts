@@ -10,7 +10,7 @@ import StoreDataEntityFactory from "../../../../domains/key_value_store/store_da
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../constants/ui_constants";
 
 describe('Test Class: "KeyValueDatabaseActiveRecord"; Behavior', () => {
-  test('Test If Method: "setItem"; Creates Data In Key value Database Correctly', () => {
+  test('Test If Method: "setItem"; Creates Data In Key value Database', () => {
     KeyValueDatabaseActiveRecord.setItem(
       LAST_SESSION_CALCULATION_KEY,
       LAST_CALCULATION_VALUE,
@@ -26,7 +26,7 @@ describe('Test Class: "KeyValueDatabaseActiveRecord"; Behavior', () => {
     expect(parsedJsonFromStoredData.data).toEqual(LAST_CALCULATION_VALUE);
   });
 
-  test('Test If Method: "getKeyData"; Returns The Stored Value From Key value Database Correctly', () => {
+  test('Test If Method: "getKeyData"; Returns The Stored Value From Key value Database', () => {
     const storeDataToBeStored: StoreDataEntity =
       StoreDataEntityFactory.getInstance(LAST_CALCULATION_VALUE);
     const storeDataToBeStoredJsonStringified: string =

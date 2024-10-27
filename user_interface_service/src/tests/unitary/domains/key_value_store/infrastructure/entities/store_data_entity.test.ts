@@ -3,7 +3,7 @@ import StoreDataEntity from "../../../../../../domains/key_value_store/infrastru
 import { LAST_CALCULATION_VALUE } from "../../../../../constants/key_value_store_constants";
 
 describe('Test Class: "StoreDataEntity"; Behavior', () => {
-  test("Test If Entity Describes How A Store Data Should Look Correctly", () => {
+  test("Test If Entity Describes How A Store Data Should Look", () => {
     const storeDataEntity: StoreDataEntity = new StoreDataEntity(
       LAST_CALCULATION_VALUE,
     );

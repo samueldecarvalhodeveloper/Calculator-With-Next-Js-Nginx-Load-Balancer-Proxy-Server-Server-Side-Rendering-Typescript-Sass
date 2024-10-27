@@ -16,7 +16,7 @@ describe('Test Component: "Index"; Behavior', () => {
     calculatorTranslator.clean();
   });
 
-  test("Test If Elements Are Rendered Correctly", () => {
+  test("Test If Elements Are Rendered", () => {
     const { getByText } = render(<Index />);
 
     const calculatorLabelElement = getByText(CALCULATOR_LABEL_TEXT);
@@ -24,7 +24,7 @@ describe('Test Component: "Index"; Behavior', () => {
     expect(calculatorLabelElement).toBeTruthy();
   });
 
-  test("Test If Calculator Expression Is Placed On Calculator Viewfinder State Correctly", () => {
+  test("Test If Calculator Expression Is Placed On Calculator Viewfinder State", () => {
     const { getByTestId } = render(<Index />);
 
     const viewfinderElement: HTMLElement = getByTestId(
@@ -34,7 +34,7 @@ describe('Test Component: "Index"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test("Test If Clean Button Cleans Calculator Expression Correctly", () => {
+  test("Test If Clean Button Cleans Calculator Expression", () => {
     calculatorTranslator.addCharacter(CalculatorCharacters.ONE);
     calculatorTranslator.addCharacter(CalculatorCharacters.ADDITION);
     calculatorTranslator.addCharacter(CalculatorCharacters.ONE);
@@ -54,7 +54,25 @@ describe('Test Component: "Index"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test("Test If Evaluate Button Evaluates Calculator Expression Correctly", () => {
+  test("Test If Backspace Button Backspaces Calculator Expression", () => {
+    calculatorTranslator.addCharacter(CalculatorCharacters.ONE);
+
+    const { getByText, getByTestId } = render(<Index />);
+
+    const backspaceButtonElement: HTMLElement = getByText(
+      UiCalculatorCharacters.BACKSPACE,
+    );
+
+    fireEvent.click(backspaceButtonElement);
+
+    const viewfinderElement: HTMLElement = getByTestId(
+      VIEWFINDER_ELEMENT_TEST_ID,
+    );
+
+    expect(viewfinderElement.innerHTML).toBeFalsy();
+  });
+
+  test("Test If Evaluate Button Evaluates Calculator Expression", () => {
     calculatorTranslator.addCharacter(CalculatorCharacters.ONE);
     calculatorTranslator.addCharacter(CalculatorCharacters.ADDITION);
     calculatorTranslator.addCharacter(CalculatorCharacters.ONE);
@@ -74,7 +92,7 @@ describe('Test Component: "Index"; Behavior', () => {
     expect(viewfinderElement.innerHTML).toEqual(CalculatorCharacters.TWO);
   });
 
-  test("Test If Numerical Buttons Adds Number Characters On Calculator Expression Correctly", () => {
+  test("Test If Numerical Buttons Adds Number Characters On Calculator Expression", () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const cleanButtonElement: HTMLElement = getByText(
@@ -132,7 +150,7 @@ describe('Test Component: "Index"; Behavior', () => {
     );
   });
 
-  test("Test If Symbol Buttons Adds Symbol Characters On Calculator Expression Correctly", () => {
+  test("Test If Symbol Buttons Adds Symbol Characters On Calculator Expression", () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const cleanButtonElement: HTMLElement = getByText(
@@ -159,7 +177,7 @@ describe('Test Component: "Index"; Behavior', () => {
     );
   });
 
-  test("Test If Operator Buttons Adds Operator Characters On Calculator Expression Correctly", () => {
+  test("Test If Operator Buttons Adds Operator Characters On Calculator Expression", () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const cleanButtonElement: HTMLElement = getByText(

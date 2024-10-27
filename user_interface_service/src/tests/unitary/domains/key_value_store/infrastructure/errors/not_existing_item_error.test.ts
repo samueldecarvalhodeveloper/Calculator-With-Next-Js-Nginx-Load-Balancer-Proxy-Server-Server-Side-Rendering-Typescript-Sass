@@ -8,7 +8,7 @@ import {
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../../../constants/ui_constants";
 
 describe('Test Class: "NotExistingItemError"; Behavior', () => {
-  test("Test If Error Describes How Should A Not Existing Item Error Be Used By The System Correctly", () => {
+  test("Test If Error Describes How Should A Not Existing Item Error Be Used By The System", () => {
     const error: Error = new NotExistingItemError(LAST_SESSION_CALCULATION_KEY);
 
     expect(error.name).toEqual(NOT_EXISTING_ITEM_ERROR_NAME);

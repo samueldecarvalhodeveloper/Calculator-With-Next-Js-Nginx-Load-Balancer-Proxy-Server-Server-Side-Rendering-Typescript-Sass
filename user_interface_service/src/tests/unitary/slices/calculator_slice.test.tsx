@@ -8,7 +8,7 @@ import { VIEWFINDER_ELEMENT_TEST_ID } from "../../../constants/pages/index_page_
 import Index from "../../../screens/index/index";
 
 describe("Test Module: Calculator Slice; Behavior", () => {
-  test("Test If Initial State Is Set Correctly", () => {
+  test("Test If Initial State Is Set", () => {
     const { getByTestId } = render(<Index />);
 
     const viewfinderElement: HTMLElement = getByTestId(
@@ -18,7 +18,7 @@ describe("Test Module: Calculator Slice; Behavior", () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test('Test If Reducer: "addCharacter"; Adds Character To Calculation Expression On Ui Correctly', () => {
+  test('Test If Reducer: "addCharacter"; Adds Character To Calculation Expression On Ui', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);
@@ -32,7 +32,7 @@ describe("Test Module: Calculator Slice; Behavior", () => {
     expect(viewfinderElement.innerHTML).toEqual(UiCalculatorCharacters.ONE);
   });
 
-  test('Test If Reducer: "evaluate"; Evaluates Calculation Expression On Ui Correctly', () => {
+  test('Test If Reducer: "evaluate"; Evaluates Calculation Expression On Ui', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const cleanButtonElement: HTMLElement = getByText(
@@ -61,7 +61,7 @@ describe("Test Module: Calculator Slice; Behavior", () => {
     expect(viewfinderElement.innerHTML).toEqual(UiCalculatorCharacters.TWO);
   });
 
-  test('Test If Reducer: "clean"; Cleans Calculation Expression On Ui Correctly', () => {
+  test('Test If Reducer: "clean"; Cleans Calculation Expression On Ui', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);
@@ -79,7 +79,7 @@ describe("Test Module: Calculator Slice; Behavior", () => {
     expect(viewfinderElement.innerHTML).toBeFalsy();
   });
 
-  test('Test If Reducer: "backspace"; Removes The Last Character From Calculation Expression On Ui Correctly', () => {
+  test('Test If Reducer: "backspace"; Removes The Last Character From Calculation Expression On Ui', () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const oneButtonElement: HTMLElement = getByText(UiCalculatorCharacters.ONE);
@@ -98,7 +98,7 @@ describe("Test Module: Calculator Slice; Behavior", () => {
     expect(viewfinderElement.innerHTML).toEqual(UiCalculatorCharacters.ONE);
   });
 
-  test("Test If Slice Restores The Stored Last Session Calculation Expression Correctly", () => {
+  test("Test If Slice Restores The Stored Last Session Calculation Expression", () => {
     KeyValueStore.setItem(
       LAST_SESSION_CALCULATION_KEY,
       UiCalculatorCharacters.ONE,

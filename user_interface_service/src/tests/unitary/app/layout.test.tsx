@@ -5,7 +5,7 @@ import Page from "../../../app/page";
 import { CALCULATOR_LABEL_TEXT } from "../../constants/ui_constants";
 
 describe('Test Component: "Layout"; Behavior', () => {
-  test("Test If Elements Are Rendered Correctly", () => {
+  test("Test If Elements Are Rendered", () => {
     const { getByText } = render(
       <Layout>
         <Page />

@@ -4,7 +4,7 @@ import render from "../../../concerns/react_render_adapter";
 import Keyboard from "../../../../components/keyboard/keyboard";
 
 describe('Test Component: "Keyboard"; Behavior', () => {
-  test("Test If Elements Are Rendered Correctly", () => {
+  test("Test If Elements Are Rendered", () => {
     const { getByText } = render(
       <Keyboard>
         <h1>{CalculatorCharacters.ONE}</h1>

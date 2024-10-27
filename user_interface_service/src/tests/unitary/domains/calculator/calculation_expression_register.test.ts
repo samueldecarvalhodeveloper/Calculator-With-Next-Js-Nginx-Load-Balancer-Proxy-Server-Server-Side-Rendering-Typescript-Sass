@@ -18,7 +18,7 @@ describe('Test Class "CalculationExpressionRegister" Behavior', () => {
     calculationExpression.setCalculationExpression("");
   });
 
-  test('Test If Method "getCalculationExpression" Returns Current Calculation Expression Correctly', () => {
+  test('Test If Method "getCalculationExpression" Returns Current Calculation Expression', () => {
     calculationExpression.setCalculationExpression(
       CalculatorCharacters.ONE +
         CalculatorCharacters.ADDITION +
@@ -35,7 +35,7 @@ describe('Test Class "CalculationExpressionRegister" Behavior', () => {
     );
   });
 
-  test('Test If Method "setCalculationExpression" Sets Calculation Expression Correctly', () => {
+  test('Test If Method "setCalculationExpression" Sets Calculation Expression', () => {
     calculationExpressionRegister.setCalculationExpression(
       CalculatorCharacters.ONE +
         CalculatorCharacters.ADDITION +
@@ -52,7 +52,7 @@ describe('Test Class "CalculationExpressionRegister" Behavior', () => {
     );
   });
 
-  test('Test If Method "addCharacterToCalculationExpression" Adds Chose Character To Calculation Expression Correctly', () => {
+  test('Test If Method "addCharacterToCalculationExpression" Adds Chose Character To Calculation Expression', () => {
     calculationExpressionRegister.addCharacterToCalculationExpression(
       CalculatorCharacters.ONE,
     );

@@ -7,7 +7,7 @@ import { REAL_OBJECT_DATA } from "../../../../../../constants/domains/key_value_
 import JsonTransformer from "../../../../../../domains/key_value_store/infrastructure/anticorruption_layer/json_transformer";
 
 describe('Test Class: "JsonTransformer"; Behavior', () => {
-  test('Test If Method: "getRealObjectFromJsonString"; Returns A Real Object Instance From String Json Representation Correctly', () => {
+  test('Test If Method: "getRealObjectFromJsonString"; Returns A Real Object Instance From String Json Representation', () => {
     const realObject: RealObjectEntity = new RealObjectEntity(REAL_OBJECT_DATA);
     const realObjectFromJsonString: RealObjectEntity =
       JsonTransformer.getRealObjectFromJsonString<RealObjectEntity>(
@@ -17,7 +17,7 @@ describe('Test Class: "JsonTransformer"; Behavior', () => {
     expect(realObjectFromJsonString.data).toEqual(realObject.data);
   });
 
-  test('Test If Method: "getJsonStringFromRealObject"; Returns A Json String Representation Of Real Object Correctly', () => {
+  test('Test If Method: "getJsonStringFromRealObject"; Returns A Json String Representation Of Real Object', () => {
     const realObject: RealObjectEntity = new RealObjectEntity(REAL_OBJECT_DATA);
     const jsonStringRepresentationOfRealObject: string =
       JsonTransformer.getJsonStringFromRealObject(realObject);

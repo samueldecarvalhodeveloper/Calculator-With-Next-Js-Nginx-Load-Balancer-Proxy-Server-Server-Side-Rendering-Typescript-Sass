@@ -4,7 +4,7 @@ import render from "../../concerns/react_render_adapter";
 import Index from "../../../screens/index/index";
 
 describe("Test Module: Store; Behavior", () => {
-  test("Test If Store Is Configured By Verifying If Calculator State Is Hydrating Elements Correctly", () => {
+  test("Test If Store Is Configured By Verifying If Calculator State Is Hydrating Elements", () => {
     const { getByTestId } = render(<Index />);
 
     const viewfinderElement: HTMLElement = getByTestId(

@@ -15,7 +15,7 @@ describe('Test Class "ExpressionEvaluater" Behavior', () => {
     expect(evaluatedExpression).toEqual(CalculatorCharacters.TWO);
   });
 
-  test('Test If Method "getEvaluatedExpression" Returns Not Valid Expression Exception If Expression Is Not Valid Correctly', () => {
+  test('Test If Method "getEvaluatedExpression" Returns Not Valid Expression Exception If Expression Is Not Valid', () => {
     const evaluatedExpression = ExpressionEvaluater.getEvaluatedExpression(
       CalculatorCharacters.ADDITION,
     );

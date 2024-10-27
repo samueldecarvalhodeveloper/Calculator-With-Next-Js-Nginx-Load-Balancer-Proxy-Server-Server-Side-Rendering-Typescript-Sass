@@ -7,7 +7,7 @@ import Index from "../../screens/index/index";
 import render from "../concerns/react_render_adapter";
 
 describe('Test Integration Of: "Ui Executing Calculation"; Behavior', () => {
-  test("Test If I Can Store A Calculation From Ui Correctly", () => {
+  test("Test If I Can Store A Calculation From Ui", () => {
     const { getByTestId, getByText } = render(<Index />);
 
     const viewFinderElement: HTMLElement = getByTestId(

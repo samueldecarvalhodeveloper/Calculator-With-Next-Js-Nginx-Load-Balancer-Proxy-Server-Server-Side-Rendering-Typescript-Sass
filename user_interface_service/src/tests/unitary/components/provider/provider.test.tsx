@@ -5,7 +5,7 @@ import Index from "../../../../screens/index/index";
 import { CALCULATOR_LABEL_TEXT } from "../../../constants/ui_constants";
 
 describe('Test Component: "Provider"; Behavior', () => {
-  test("Test If Elements Are Rendered Correctly", () => {
+  test("Test If Elements Are Rendered", () => {
     const { getByText } = render(
       <Provider>
         <Index />

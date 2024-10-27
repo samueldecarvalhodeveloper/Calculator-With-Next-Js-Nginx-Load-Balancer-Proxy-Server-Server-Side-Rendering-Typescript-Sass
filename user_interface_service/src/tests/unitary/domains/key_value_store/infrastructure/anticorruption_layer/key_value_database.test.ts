@@ -8,7 +8,7 @@ import { NOT_EXISTING_ITEM_ERROR_NAME } from "../../../../../../constants/domain
 import { LAST_SESSION_CALCULATION_KEY } from "../../../../../../constants/ui_constants";
 
 describe('Test Class: "KeyValueDatabase"; Behavior', () => {
-  test('Test If Method: "setItem"; Creates Data From Key value Database Correctly', () => {
+  test('Test If Method: "setItem"; Creates Data From Key value Database', () => {
     KeyValueDatabase.setItem(LAST_SESSION_CALCULATION_KEY, LAST_CALCULATION_VALUE);
 
     const dataStoredInKeyValueDatabase: string = localStorage.getItem(
@@ -18,7 +18,7 @@ describe('Test Class: "KeyValueDatabase"; Behavior', () => {
     expect(dataStoredInKeyValueDatabase).toEqual(LAST_CALCULATION_VALUE);
   });
 
-  test('Test If Method: "getKeyData"; Returns The Stored Value From Key value Database Correctly', () => {
+  test('Test If Method: "getKeyData"; Returns The Stored Value From Key value Database', () => {
     localStorage.setItem(LAST_SESSION_CALCULATION_KEY, LAST_CALCULATION_VALUE);
 
     const parsedJsonFromStoredData: StoreValue =
@@ -27,7 +27,7 @@ describe('Test Class: "KeyValueDatabase"; Behavior', () => {
     expect(parsedJsonFromStoredData).toEqual(LAST_CALCULATION_VALUE);
   });
 
-  test('Test If Method: "getKeyData"; Throws A "NotExistingKeyError" Error If Chosen Task Does Not Exist Correctly', () => {
+  test('Test If Method: "getKeyData"; Throws A "NotExistingKeyError" Error If Chosen Task Does Not Exist', () => {
     try {
       KeyValueDatabase.getSelectedKeyData(LAST_SESSION_CALCULATION_KEY);
     } catch (error) {

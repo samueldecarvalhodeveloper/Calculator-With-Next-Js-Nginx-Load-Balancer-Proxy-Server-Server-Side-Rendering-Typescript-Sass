@@ -7,7 +7,7 @@ import Index from "../../screens/index/index";
 import render from "../concerns/react_render_adapter";
 
 describe("Test System Behavior", () => {
-  test("Test If System Handles A Calculator Calculation In User Interface Correctly", () => {
+  test("Test If System Handles A Calculator Calculation In User Interface", () => {
     const { getByText, getByTestId } = render(<Index />);
 
     const viewFinderElement: HTMLElement = getByTestId(
@@ -40,7 +40,7 @@ describe("Test System Behavior", () => {
     expect(viewFinderElement.innerHTML).toBeFalsy();
   });
 
-  test("Test If System Handles A Calculator Calculation Expression Storing In User Interface Correctly", () => {
+  test("Test If System Handles A Calculator Calculation Expression Storing In User Interface", () => {
     const { getByTestId, getByText } = render(<Index />);
 
     const viewFinderElement: HTMLElement = getByTestId(

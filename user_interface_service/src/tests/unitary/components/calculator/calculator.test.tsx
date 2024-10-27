@@ -4,7 +4,7 @@ import render from "../../../concerns/react_render_adapter";
 import Calculator from "../../../../components/calculator/calculator";
 
 describe('Test Component: "Calculator"; Behavior', () => {
-  test("Test If Elements Are Rendered And Click Event Is Dispatched Correctly", () => {
+  test("Test If Elements Are Rendered And Click Event Is Dispatched", () => {
     const calculatorExpression: string =
       UiCalculatorCharacters.ONE +
       UiCalculatorCharacters.ADDITION +
