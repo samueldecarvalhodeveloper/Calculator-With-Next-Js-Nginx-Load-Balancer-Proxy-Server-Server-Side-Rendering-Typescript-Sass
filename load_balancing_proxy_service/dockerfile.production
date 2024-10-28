@@ -1,7 +1,0 @@
-#syntax=docker/dockerfile:1
-
-FROM nginx:latest
-
-COPY ./nginx.production.conf /etc/nginx/nginx.conf
-
-EXPOSE 80

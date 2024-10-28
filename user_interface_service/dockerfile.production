@@ -14,13 +14,12 @@ COPY ./src/calculator_characters/ /src/app/src/calculator_characters/
 COPY ./src/components/ /src/app/src/components/
 COPY ./src/constants/ /src/app/src/constants/
 COPY ./src/domains/ /src/app/src/domains/
-COPY ./src/infrastructure/ /src/app/src/infrastructure/
 COPY ./src/screens/ /src/app/src/screens/
 COPY ./src/slices/ /src/app/src/slices/
 COPY ./src/store/ /src/app/src/store/
 COPY ./src/hooks/ /src/app/src/hooks/
-COPY ./src/calculation_result_update_adapter/ /src/app/src/calculation_result_update_adapter/
-COPY ./src/last_session_calculation_result_store/ /src/app/src/last_session_calculation_result_store/
+COPY ./src/calculation_expression_update_adapter/ /src/app/src/calculation_expression_update_adapter/
+COPY ./src/last_session_calculation_expression_store/ /src/app/src/last_session_calculation_expression_store/
 
 RUN npm install
 RUN npm run build
