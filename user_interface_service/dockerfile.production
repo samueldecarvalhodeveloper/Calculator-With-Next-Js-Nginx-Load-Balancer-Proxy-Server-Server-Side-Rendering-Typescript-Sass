@@ -1,0 +1,29 @@
+# syntax=docker/dockerfile:1
+
+FROM node:22-alpine
+
+WORKDIR /src/app/
+
+COPY ./package.json /src/app/
+COPY ./tsconfig.json /src/app/
+COPY ./types.d.ts /src/app/
+COPY ./next.config.mjs /src/app/
+COPY ./src/app/ /src/app/src/app/
+COPY ./src/assets/ /src/app/src/assets/
+COPY ./src/calculator_characters/ /src/app/src/calculator_characters/
+COPY ./src/components/ /src/app/src/components/
+COPY ./src/constants/ /src/app/src/constants/
+COPY ./src/domains/ /src/app/src/domains/
+COPY ./src/screens/ /src/app/src/screens/
+COPY ./src/slices/ /src/app/src/slices/
+COPY ./src/store/ /src/app/src/store/
+COPY ./src/hooks/ /src/app/src/hooks/
+COPY ./src/calculation_expression_update_adapter/ /src/app/src/calculation_expression_update_adapter/
+COPY ./src/last_session_calculation_expression_store/ /src/app/src/last_session_calculation_expression_store/
+
+RUN npm install --omit=dev
+RUN npm run build
+
+CMD npm run start
+
+EXPOSE 3000
