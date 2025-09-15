@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1
+
+FROM node:22-alpine
+
+WORKDIR /src/app/
+
+COPY ./package.json /src/app/
+COPY ./tsconfig.json /src/app/
+COPY ./types.d.ts /src/app/
+COPY ./next.config.mjs /src/app/
+COPY ./src/ /src/app/src/
+
+RUN npm install
+
+CMD npm run dev:port $PORT
+
+EXPOSE $PORT

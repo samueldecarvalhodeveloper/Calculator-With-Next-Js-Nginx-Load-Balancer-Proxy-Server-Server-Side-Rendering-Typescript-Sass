@@ -1,0 +1,63 @@
+services:
+  user_interface_service_testing:
+    build:
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.testing
+      tags:
+        - user_interface_service_testing
+    volumes:
+      - ./user_interface_service/:/src/app/user_interface_service/
+
+  user_interface_service_development:
+      build:
+        context: ./user_interface_service/
+        dockerfile: ./dockerfile.development
+        tags:
+          - user_interface_service_development
+      network_mode: "host"
+      volumes:
+        - ./user_interface_service/:/src/app/user_interface_service/
+      environment:
+        - PORT=3004
+
+  user_interface_service_production_one:
+    build:
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
+      tags:
+        - user_interface_service_production_one
+    network_mode: "host"
+    environment:
+      - PORT=3001
+
+  user_interface_service_production_two:
+    build:
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
+      tags:
+        - user_interface_service_production_two
+    network_mode: "host"
+    environment:
+      - PORT=3002
+      
+  user_interface_service_production_three:
+    build:
+      context: ./user_interface_service/
+      dockerfile: ./dockerfile.production
+      tags:
+        - user_interface_service_production_three
+    network_mode: "host"
+    environment:
+      - PORT=3003
+
+  load_balancing_proxy_service:
+    build:
+      context: ./load_balancing_proxy_service/
+      dockerfile: ./dockerfile
+      tags:
+        - load_balancing_proxy_service
+    network_mode: "host"
+    depends_on:
+      - user_interface_service_production_one
+      - user_interface_service_production_two
+      - user_interface_service_production_three
