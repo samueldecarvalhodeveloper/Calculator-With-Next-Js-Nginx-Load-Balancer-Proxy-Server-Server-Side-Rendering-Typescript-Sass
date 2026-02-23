@@ -1,6 +1,6 @@
 import CalculationExpressionRegister from "./calculation_expression_register";
 import CalculatorCharacters from "./calculator_characters";
-import ExpressionEvaluater from "./infrastructure/anticorruption_layer/expression_evaluater";
+import ExpressionEvaluator from "./infrastructure/anticorruption_layer/expression_evaluator";
 import CalculatorFormatter from "./infrastructure/calculator_formatter";
 
 class CalculationExpressionActiveRecord {
@@ -45,7 +45,7 @@ class CalculationExpressionActiveRecord {
     const currentCalculationExpression: string =
       this.calculationExpressionRegister.getCalculationExpression();
     const evaluatedCalculationExpression: string =
-      ExpressionEvaluater.getEvaluatedExpression(currentCalculationExpression);
+      ExpressionEvaluator.getEvaluatedExpression(currentCalculationExpression);
 
     this.calculationExpressionRegister.setCalculationExpression(
       evaluatedCalculationExpression,
