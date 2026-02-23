@@ -3,7 +3,7 @@ import CalculationExpression from "../../../../domains/calculator/calculation_ex
 import CalculatorCharacters from "../../../../domains/calculator/calculator_characters";
 
 describe('Test Class "CalculationExpression" Behavior', () => {
-  test("Test How Calculation Expression Should be Used On Client", () => {
+  test("Test How Calculation Expression Should Be Used On Client", () => {
     const calculationExpression = new CalculationExpression("");
 
     const initialCalculationExpression =
